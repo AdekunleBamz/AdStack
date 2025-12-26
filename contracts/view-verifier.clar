@@ -94,7 +94,7 @@
 (define-private (check-rate-limit (viewer principal))
     (let
         ((current-count (default-to { view-count: u0 }
-            (map-get? ViewerRateLimit { viewer: viewer, block: stacks-block-height }))))
+            (map-get? ViewerRateLimit { viewer: viewer, block: stacks-block-time }))))
         (< (get view-count current-count) (var-get max-views-per-block))
     )
 )
@@ -102,9 +102,9 @@
 (define-private (update-rate-limit (viewer principal))
     (let
         ((current-count (default-to { view-count: u0 }
-            (map-get? ViewerRateLimit { viewer: viewer, block: stacks-block-height }))))
+            (map-get? ViewerRateLimit { viewer: viewer, block: stacks-block-time }))))
         (map-set ViewerRateLimit
-            { viewer: viewer, block: stacks-block-height }
+            { viewer: viewer, block: stacks-block-time }
             { view-count: (+ u1 (get view-count current-count)) }
         )
     )
@@ -131,7 +131,7 @@
     (verified bool))
     
     (let
-        ((current-day (/ stacks-block-height u144))
+        ((current-day (/ stacks-block-time u86400))
          (cache (default-to {
             total-views: u0,
             verified-views: u0,
@@ -192,7 +192,7 @@
                         campaign-id: campaign-id,
                         publisher: publisher,
                         viewer: viewer,
-                        timestamp: stacks-block-height,
+                        timestamp: stacks-block-time,
                         verification-score: verification-score,
                         proof-data: (default-to 0x00 proof-data),
                         verified: true
@@ -215,7 +215,7 @@
                         campaign-id: campaign-id,
                         publisher: publisher,
                         viewer: viewer,
-                        timestamp: stacks-block-height,
+                        timestamp: stacks-block-time,
                         verification-score: verification-score,
                         proof-data: (default-to 0x00 proof-data),
                         verified: false
@@ -248,7 +248,7 @@
             { publisher: publisher }
             {
                 suspicious-views: (+ (get suspicious-views current-flags) u1),
-                last-flagged: stacks-block-height,
+                last-flagged: stacks-block-time,
                 total-flags: (+ (get total-flags current-flags) u1),
                 status: (if (> (+ (get suspicious-views current-flags) u1) 
                              (var-get suspicious-threshold))
@@ -302,7 +302,7 @@
     (publisher principal))
     
     (let
-        ((current-day (/ stacks-block-height u144)))
+        ((current-day (/ stacks-block-time u86400)))
         (match (map-get? VerificationCache 
             { campaign-id: campaign-id, day: current-day })
             stats (ok stats)

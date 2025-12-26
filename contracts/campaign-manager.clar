@@ -119,7 +119,7 @@
 (define-private (update-daily-views (campaign-id uint))
     (let
         (
-            (current-day (/ stacks-block-height u144))  ;; Approximately daily blocks
+            (current-day (/ stacks-block-time u86400))  ;; Daily based on Unix timestamp (seconds per day)
             (current-views (default-to { view-count: u0 }
                 (map-get? DailyViews { campaign-id: campaign-id, day: current-day })))
         )
@@ -135,7 +135,7 @@
     (let
         (
             (campaign (unwrap-panic (map-get? Campaigns { campaign-id: campaign-id })))
-            (current-day (/ stacks-block-height u144))
+            (current-day (/ stacks-block-time u86400))
             (daily-views (default-to { view-count: u0 }
                 (map-get? DailyViews { campaign-id: campaign-id, day: current-day })))
         )
@@ -194,8 +194,8 @@
                 targeting-data: targeting-data,
                 refundable: refundable,
                 platform-fee: platform-fee,
-                created-at: stacks-block-height,
-                last-updated: stacks-block-height
+                created-at: stacks-block-time,
+                last-updated: stacks-block-time
             }
         )
         
@@ -271,8 +271,8 @@
                 verified: true,
                 reputation-score: initial-score,
                 total-earnings: u0,
-                join-height: stacks-block-height,
-                last-active: stacks-block-height
+                join-height: stacks-block-time,
+                last-active: stacks-block-time
             }
         )
         (ok true)
@@ -323,7 +323,7 @@
                     remaining-budget: (- (get remaining-budget campaign)
                                       (get cost-per-view campaign)),
                     current-views: (+ (get current-views campaign) u1),
-                    last-updated: stacks-block-height
+                    last-updated: stacks-block-time
                 })
             )
             (ok true)
@@ -340,7 +340,7 @@
                 { publisher: publisher }
                 (merge publisher-data {
                     total-earnings: (+ (get total-earnings publisher-data) earning),
-                    last-active: stacks-block-height
+                    last-active: stacks-block-time
                 })
             )
             (ok true)
@@ -380,7 +380,7 @@
                     average-view-rate: u0,
                     reputation-score: u100,
                     last-campaign-id: campaign-id,
-                    join-height: stacks-block-height
+                    join-height: stacks-block-time
                 }
             )
         )
