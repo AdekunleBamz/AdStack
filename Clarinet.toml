@@ -20,6 +20,11 @@ path = 'contracts/dispute-resolution.clar'
 clarity_version = 4
 epoch = 'latest'
 
+[contracts.escrow-manager]
+path = 'contracts/escrow-manager.clar'
+clarity_version = 4
+epoch = 'latest'
+
 [contracts.payment-distributor]
 path = 'contracts/payment-distributor.clar'
 clarity_version = 2
