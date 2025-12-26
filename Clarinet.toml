@@ -22,8 +22,8 @@ epoch = 'latest'
 
 [contracts.campaign-manager]
 path = 'contracts/campaign-manager.clar'
-clarity_version = 2
-epoch = '2.5'
+clarity_version = 4
+epoch = 'latest'
 
 [contracts.dispute-resolution]
 path = 'contracts/dispute-resolution.clar'
@@ -47,8 +47,8 @@ epoch = 'latest'
 
 [contracts.payment-distributor]
 path = 'contracts/payment-distributor.clar'
-clarity_version = 2
-epoch = '2.5'
+clarity_version = 4
+epoch = 'latest'
 
 [contracts.publisher-network]
 path = 'contracts/publisher-network.clar'
@@ -72,13 +72,13 @@ epoch = 'latest'
 
 [contracts.user-registry]
 path = 'contracts/user-registry.clar'
-clarity_version = 2
-epoch = '2.5'
+clarity_version = 4
+epoch = 'latest'
 
 [contracts.view-verifier]
 path = 'contracts/view-verifier.clar'
-clarity_version = 2
-epoch = '2.5'
+clarity_version = 4
+epoch = 'latest'
 [repl.analysis]
 passes = ['check_checker']
 
