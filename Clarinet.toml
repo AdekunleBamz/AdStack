@@ -5,77 +5,77 @@ authors = []
 telemetry = true
 cache_dir = './.cache'
 requirements = []
-[contracts.ad-content-registry]
+[contracts.asset-library]
 path = 'contracts/ad-content-registry.clar'
 clarity_version = 4
 epoch = 'latest'
 
-[contracts.analytics-aggregator]
+[contracts.stats-tracker]
 path = 'contracts/analytics-aggregator.clar'
 clarity_version = 4
 epoch = 'latest'
 
-[contracts.auction-system]
+[contracts.offer-exchange]
 path = 'contracts/auction-system.clar'
 clarity_version = 4
 epoch = 'latest'
 
-[contracts.campaign-orchestrator]
+[contracts.promo-manager]
 path = 'contracts/campaign-orchestrator.clar'
 clarity_version = 4
 epoch = 'latest'
 
-[contracts.dispute-resolution]
+[contracts.mediation-hub]
 path = 'contracts/dispute-resolution.clar'
 clarity_version = 4
 epoch = 'latest'
 
-[contracts.escrow-manager]
+[contracts.funds-keeper]
 path = 'contracts/escrow-manager.clar'
 clarity_version = 4
 epoch = 'latest'
 
-[contracts.governance-dao]
+[contracts.vote-handler]
 path = 'contracts/governance-dao.clar'
 clarity_version = 4
 epoch = 'latest'
 
-[contracts.oracle-integration]
+[contracts.oracle-link]
 path = 'contracts/oracle-integration.clar'
 clarity_version = 4
 epoch = 'latest'
 
-[contracts.revenue-settlement]
+[contracts.cash-distributor]
 path = 'contracts/revenue-settlement.clar'
 clarity_version = 4
 epoch = 'latest'
 
-[contracts.publisher-network]
+[contracts.partner-hub]
 path = 'contracts/publisher-network.clar'
 clarity_version = 4
 epoch = 'latest'
 
-[contracts.rewards-distributor]
+[contracts.prize-pool]
 path = 'contracts/rewards-distributor.clar'
 clarity_version = 4
 epoch = 'latest'
 
-[contracts.subscription-manager]
+[contracts.subscription-hub]
 path = 'contracts/subscription-manager.clar'
 clarity_version = 4
 epoch = 'latest'
 
-[contracts.targeting-engine]
+[contracts.audience-selector]
 path = 'contracts/targeting-engine.clar'
 clarity_version = 4
 epoch = 'latest'
 
-[contracts.identity-registry]
+[contracts.user-profiles]
 path = 'contracts/identity-registry.clar'
 clarity_version = 4
 epoch = 'latest'
 
-[contracts.fraud-prevention]
+[contracts.threat-detector]
 path = 'contracts/fraud-prevention.clar'
 clarity_version = 4
 epoch = 'latest'
