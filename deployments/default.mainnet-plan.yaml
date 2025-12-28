@@ -9,108 +9,108 @@ plan:
     - id: 0
       transactions:
         - contract-publish:
-            contract-name: account-managers
-            expected-sender: SP3BXJENEWVNCFYGJF75DFS478H1BZJXNZPT84EAD
-            cost: 119760
-            path: contracts/identity-registry.clar
-            anchor-block-only: true
-            clarity-version: 4
-        - contract-publish:
-            contract-name: ad-coordinators
-            expected-sender: SP3BXJENEWVNCFYGJF75DFS478H1BZJXNZPT84EAD
-            cost: 129010
-            path: contracts/campaign-orchestrator.clar
-            anchor-block-only: true
-            clarity-version: 4
-        - contract-publish:
-            contract-name: asset-guardians
-            expected-sender: SP3BXJENEWVNCFYGJF75DFS478H1BZJXNZPT84EAD
-            cost: 150600
-            path: contracts/escrow-manager.clar
-            anchor-block-only: true
-            clarity-version: 4
-        - contract-publish:
-            contract-name: bidding-platforms
-            expected-sender: SP3BXJENEWVNCFYGJF75DFS478H1BZJXNZPT84EAD
-            cost: 112320
-            path: contracts/auction-system.clar
-            anchor-block-only: true
-            clarity-version: 4
-        - contract-publish:
-            contract-name: billing-systems
-            expected-sender: SP3BXJENEWVNCFYGJF75DFS478H1BZJXNZPT84EAD
-            cost: 151440
-            path: contracts/subscription-manager.clar
-            anchor-block-only: true
-            clarity-version: 4
-        - contract-publish:
-            contract-name: bonus-vaults
-            expected-sender: SP3BXJENEWVNCFYGJF75DFS478H1BZJXNZPT84EAD
-            cost: 112330
-            path: contracts/rewards-distributor.clar
-            anchor-block-only: true
-            clarity-version: 4
-        - contract-publish:
-            contract-name: conflict-resolvers
-            expected-sender: SP3BXJENEWVNCFYGJF75DFS478H1BZJXNZPT84EAD
-            cost: 178690
-            path: contracts/dispute-resolution.clar
-            anchor-block-only: true
-            clarity-version: 4
-        - contract-publish:
-            contract-name: dao-controllers
-            expected-sender: SP3BXJENEWVNCFYGJF75DFS478H1BZJXNZPT84EAD
-            cost: 113690
-            path: contracts/governance-dao.clar
-            anchor-block-only: true
-            clarity-version: 4
-        - contract-publish:
-            contract-name: data-collectors
-            expected-sender: SP3BXJENEWVNCFYGJF75DFS478H1BZJXNZPT84EAD
-            cost: 106940
-            path: contracts/analytics-aggregator.clar
-            anchor-block-only: true
-            clarity-version: 4
-        - contract-publish:
-            contract-name: demographic-filters
-            expected-sender: SP3BXJENEWVNCFYGJF75DFS478H1BZJXNZPT84EAD
-            cost: 165520
-            path: contracts/targeting-engine.clar
-            anchor-block-only: true
-            clarity-version: 4
-        - contract-publish:
-            contract-name: external-feeds
-            expected-sender: SP3BXJENEWVNCFYGJF75DFS478H1BZJXNZPT84EAD
-            cost: 86600
-            path: contracts/oracle-integration.clar
-            anchor-block-only: true
-            clarity-version: 4
-        - contract-publish:
-            contract-name: media-storages
+            contract-name: asset-library
             expected-sender: SP3BXJENEWVNCFYGJF75DFS478H1BZJXNZPT84EAD
             cost: 130560
             path: contracts/ad-content-registry.clar
             anchor-block-only: true
             clarity-version: 4
         - contract-publish:
-            contract-name: network-registrys
+            contract-name: audience-selector
             expected-sender: SP3BXJENEWVNCFYGJF75DFS478H1BZJXNZPT84EAD
-            cost: 106470
-            path: contracts/publisher-network.clar
+            cost: 165520
+            path: contracts/targeting-engine.clar
             anchor-block-only: true
             clarity-version: 4
         - contract-publish:
-            contract-name: payment-processors
+            contract-name: cash-distributor
             expected-sender: SP3BXJENEWVNCFYGJF75DFS478H1BZJXNZPT84EAD
             cost: 69700
             path: contracts/revenue-settlement.clar
             anchor-block-only: true
             clarity-version: 4
         - contract-publish:
-            contract-name: security-monitors
+            contract-name: funds-keeper
+            expected-sender: SP3BXJENEWVNCFYGJF75DFS478H1BZJXNZPT84EAD
+            cost: 150600
+            path: contracts/escrow-manager.clar
+            anchor-block-only: true
+            clarity-version: 4
+        - contract-publish:
+            contract-name: mediation-hub
+            expected-sender: SP3BXJENEWVNCFYGJF75DFS478H1BZJXNZPT84EAD
+            cost: 178690
+            path: contracts/dispute-resolution.clar
+            anchor-block-only: true
+            clarity-version: 4
+        - contract-publish:
+            contract-name: offer-exchange
+            expected-sender: SP3BXJENEWVNCFYGJF75DFS478H1BZJXNZPT84EAD
+            cost: 112320
+            path: contracts/auction-system.clar
+            anchor-block-only: true
+            clarity-version: 4
+        - contract-publish:
+            contract-name: oracle-link
+            expected-sender: SP3BXJENEWVNCFYGJF75DFS478H1BZJXNZPT84EAD
+            cost: 86600
+            path: contracts/oracle-integration.clar
+            anchor-block-only: true
+            clarity-version: 4
+        - contract-publish:
+            contract-name: partner-hub
+            expected-sender: SP3BXJENEWVNCFYGJF75DFS478H1BZJXNZPT84EAD
+            cost: 106470
+            path: contracts/publisher-network.clar
+            anchor-block-only: true
+            clarity-version: 4
+        - contract-publish:
+            contract-name: prize-pool
+            expected-sender: SP3BXJENEWVNCFYGJF75DFS478H1BZJXNZPT84EAD
+            cost: 112330
+            path: contracts/rewards-distributor.clar
+            anchor-block-only: true
+            clarity-version: 4
+        - contract-publish:
+            contract-name: promo-manager
+            expected-sender: SP3BXJENEWVNCFYGJF75DFS478H1BZJXNZPT84EAD
+            cost: 129010
+            path: contracts/campaign-orchestrator.clar
+            anchor-block-only: true
+            clarity-version: 4
+        - contract-publish:
+            contract-name: stats-tracker
+            expected-sender: SP3BXJENEWVNCFYGJF75DFS478H1BZJXNZPT84EAD
+            cost: 106940
+            path: contracts/analytics-aggregator.clar
+            anchor-block-only: true
+            clarity-version: 4
+        - contract-publish:
+            contract-name: subscription-hub
+            expected-sender: SP3BXJENEWVNCFYGJF75DFS478H1BZJXNZPT84EAD
+            cost: 151440
+            path: contracts/subscription-manager.clar
+            anchor-block-only: true
+            clarity-version: 4
+        - contract-publish:
+            contract-name: threat-detector
             expected-sender: SP3BXJENEWVNCFYGJF75DFS478H1BZJXNZPT84EAD
             cost: 100320
             path: contracts/fraud-prevention.clar
+            anchor-block-only: true
+            clarity-version: 4
+        - contract-publish:
+            contract-name: user-profiles
+            expected-sender: SP3BXJENEWVNCFYGJF75DFS478H1BZJXNZPT84EAD
+            cost: 119760
+            path: contracts/identity-registry.clar
+            anchor-block-only: true
+            clarity-version: 4
+        - contract-publish:
+            contract-name: vote-handler
+            expected-sender: SP3BXJENEWVNCFYGJF75DFS478H1BZJXNZPT84EAD
+            cost: 113690
+            path: contracts/governance-dao.clar
             anchor-block-only: true
             clarity-version: 4
       epoch: "3.3"
