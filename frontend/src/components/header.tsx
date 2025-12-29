@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { Wallet, LogOut } from 'lucide-react';
 import { connectWallet, disconnectWallet, getWalletAddress, isWalletConnected } from '@/lib/wallet';
 import { useWalletStore } from '@/store/wallet-store';
+import { truncateAddress } from '@/lib/display-utils';
 
 export function Header() {
   const { address, isConnected, setAddress, setConnected, disconnect } = useWalletStore();
@@ -22,20 +23,21 @@ export function Header() {
     try {
       await connectWallet();
       const addr = getWalletAddress();
-      setAddress(addr);
-      setConnected(true);
-    } catch (error) {
-      console.error('Failed to connect wallet:', error);
+      if (addr) {
+        setAddress(addr);
+        setConnected(true);
+      }
+    } catch (error: any) {
+      // Error is already parsed by wallet.ts
+      if (error.code !== 'USER_REJECTED') {
+        console.error('Failed to connect wallet:', error.message || error);
+      }
     }
   };
 
   const handleDisconnect = () => {
     disconnectWallet();
     disconnect();
-  };
-
-  const truncateAddress = (addr: string) => {
-    return `${addr.slice(0, 6)}...${addr.slice(-4)}`;
   };
 
   if (!mounted) {
