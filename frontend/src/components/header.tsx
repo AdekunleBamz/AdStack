@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { Wallet, LogOut } from 'lucide-react';
 import { connectWallet, disconnectWallet, getWalletAddress, isWalletConnected } from '@/lib/wallet';
 import { useWalletStore } from '@/store/wallet-store';
+import { truncateAddress } from '@/lib/display-utils';
 
 export function Header() {
   const { address, isConnected, setAddress, setConnected, disconnect } = useWalletStore();
@@ -37,10 +38,6 @@ export function Header() {
   const handleDisconnect = () => {
     disconnectWallet();
     disconnect();
-  };
-
-  const truncateAddress = (addr: string) => {
-    return `${addr.slice(0, 6)}...${addr.slice(-4)}`;
   };
 
   if (!mounted) {
